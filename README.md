@@ -1,331 +1,163 @@
-# 🏛️ Local Government Website Starter Kit
+# Better Rizal, Nueva Ecija
 
-A modern, multilingual, and accessible website template designed specifically for local government units (LGUs) in the Philippines. Built with React, TypeScript, and Tailwind CSS.
+A community-maintained digital transparency portal for the Municipality of Rizal, Nueva Ecija. Built as part of the [BetterGov.ph](https://github.com/jmacj/better-lgu-directory) initiative — an independent, civic-minded website that makes local government information (services, officials, budgets, ordinances, and contacts) easy for citizens to find and understand.
 
-## ✨ Features
+> **Status:** 🔵 Planned — building toward a public launch at `betterrizalne.org`.
+> Registered in the [Better LGU Directory](https://lgu.bettergov.ph) under _Rizal, Nueva Ecija_.
 
-- **🌐 Multilingual Support**: English, Filipino, Cebuano, and other Philippine languages
-- **📱 Responsive Design**: Mobile-first approach with modern UI/UX
-- **♿ Accessibility**: WCAG 2.1 compliant design
-- **📝 Content Management**: YAML-based content system for easy updates
-- **🎨 Customizable**: Easy theming and branding customization
-- **⚡ Fast Performance**: Built with Vite for optimal loading speeds
-- **🔍 SEO Optimized**: Built-in SEO with react-helmet, meta tags, and Open Graph support
+## Features
 
-## 🚀 Quick Start
+- **YAML-driven content** — edit Markdown and YAML files, never touch code
+- **10 service categories** — Health, Education, Business, Social Welfare, Agriculture, Infrastructure, Waste, Environment, Disaster Preparedness, Housing
+- **Government section** — Officials, Departments, News, Guides & Regulations, Reports & Statistics, Public Consultations, Transparency
+- **Multilingual** — English today; Filipino and other Philippine languages supported via i18next
+- **Full-text search** — Meilisearch-backed (with a static fallback planned)
+- **SEO & Open Graph** — per-page metadata via react-helmet-async
+- **Accessible** — WCAG 2.1 design
+- **Mobile-first** — responsive layouts with Tailwind CSS v4
+- **One-command setup** — `npm run setup` configures branding interactively
+
+## Tech Stack
+
+- **Framework:** [React 19](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/) (strict)
+- **Build:** [Vite](https://vite.dev/)
+- **Styling:** [Tailwind CSS v4](https://tailwindcss.com/)
+- **Routing:** [React Router](https://reactrouter.com/)
+- **i18n:** [i18next](https://www.i18next.com/)
+- **Search:** [Meilisearch](https://www.meilisearch.com/)
+- **Content:** YAML + Markdown via [js-yaml](https://github.com/nodeca/js-yaml) and [react-markdown](https://github.com/remarkjs/react-markdown)
+- **UI:** [@bettergov/kapwa](https://github.com/bettergov/kapwa) + [Lucide](https://lucide.dev/) icons
+
+## Quick Start
 
 ### Prerequisites
 
 - Node.js 18+
-- npm or yarn
-- Git
+- npm
 
-### Installation
+### Install & Run
 
-1. **Fork the repository**
-   - Visit https://github.com/iyanski/betterlocalgov
-   - Click the "Fork" button in the top right
-   - This creates your own copy of the repository
+```bash
+# Fork & clone
+git clone https://github.com/njveneracion/betterrizalne.git
+cd betterrizalne
 
-2. **Clone your forked repository**
+# Install dependencies
+npm install
 
-   ```bash
-   git clone https://github.com/YOUR-USERNAME/betterlocalgov.git
-   cd betterlocalgov
-   ```
+# Configure your LGU (optional — defaults to the starter kit)
+npm run setup
 
-   Replace `YOUR-USERNAME` with your GitHub username.
+# Start the dev server
+npm run dev
+```
 
-3. **Add upstream remote** (to get updates from the original repo)
+Open [http://localhost:5173](http://localhost:5173).
 
-   ```bash
-   git remote add upstream https://github.com/iyanski/betterlocalgov.git
-   ```
+## Scripts
 
-4. **Install dependencies**
+| Command                 | Purpose                            |
+| ----------------------- | ---------------------------------- |
+| `npm run dev`           | Start dev server (localhost:5173)  |
+| `npm run build`         | Type-check + production build      |
+| `npm run lint`          | ESLint check                       |
+| `npm run lint:fix`      | Auto-fix lint issues               |
+| `npm run format`        | Prettier formatting                |
+| `npm run setup`         | Interactive LGU setup script       |
+| `npm run convert-yaml`  | Convert YAML content to JSON       |
+| `npm run dev:yaml`      | Convert YAML then start dev server |
+| `npm run index-content` | Index content into Meilisearch     |
 
-   ```bash
-   npm install
-   # or
-   yarn install
-   ```
-
-5. **Run the setup script**
-
-   ```bash
-   npm run setup
-   ```
-
-   This will guide you through configuring your government's information.
-
-6. **Start development server**
-
-   ```bash
-   npm run dev
-   # or
-   yarn dev
-   ```
-
-7. **Open your browser**
-   Navigate to `http://localhost:5173`
-
-## 📚 Documentation
-
-- **[STARTER-KIT-README.md](STARTER-KIT-README.md)** - Complete setup and customization guide
-- **[CONTENT-GUIDE.md](CONTENT-GUIDE.md)** - Content writing and contribution guidelines
-- **[CONTENT-MANAGEMENT.md](CONTENT-MANAGEMENT.md)** - Guide for non-technical users to edit and manage website content
-- **[DEPLOYMENT-GUIDE.md](DEPLOYMENT-GUIDE.md)** - Deployment instructions for Vercel and other platforms
-- **[STARTER-KIT-SUMMARY.md](STARTER-KIT-SUMMARY.md)** - Audit results and implementation summary
-- **[CHANGELOG.md](CHANGELOG.md)** - Version history and release notes
-- **[docs/meilisearch.md](docs/meilisearch.md)** - Meilisearch search setup and integration guide
-
-## 🎯 Perfect For
-
-- **Local Government Units** (Cities, Municipalities, Provinces)
-- **Government IT Departments** looking for modern web solutions
-- **Web Development Agencies** serving government clients
-- **Civic Technology Organizations** building government tools
-- **Government Officials** wanting professional online presence
-
-## ⚡ Quick Setup (3-5 hours to live website)
-
-1. **Fork & Clone** (5 minutes)
-   - Fork the repository on GitHub (click "Fork" at https://github.com/iyanski/betterlocalgov)
-   - Clone your fork:
-
-   ```bash
-   git clone https://github.com/YOUR-USERNAME/betterlocalgov.git
-   cd betterlocalgov
-   git remote add upstream https://github.com/iyanski/betterlocalgov.git
-   npm install
-   ```
-
-   Replace `YOUR-USERNAME` with your GitHub username.
-
-2. **Configure Your Government** (15 minutes)
-
-   ```bash
-   npm run setup
-   # Interactive setup guides you through configuration
-   ```
-
-3. **Customize Content** (2-4 hours)
-   - Edit service information in `content/services/`
-   - Add government department info in `content/government/`
-   - Update contact information and branding
-
-4. **Deploy to Production** (15 minutes)
-   - Connect to Vercel for free hosting
-   - Set up custom domain (optional)
-   - Your website is live!
-
-## 🌟 What Makes This Different
-
-### **Built for Philippine LGUs**
-
-- **Multilingual**: English, Filipino, Cebuano, and other local languages
-- **Local Context**: Designed for Philippine government structure
-- **Cultural Sensitivity**: Respects local customs and practices
-- **Accessibility**: WCAG 2.1 compliant for all citizens
-
-### **Non-Technical Friendly**
-
-- **YAML Content Management**: Easy content updates without coding
-- **Visual Setup**: Interactive configuration process
-- **Clear Documentation**: Step-by-step guides for everything
-- **Template System**: Pre-built content templates
-
-### **Modern & Professional**
-
-- **Mobile-First**: Works perfectly on all devices
-- **Fast Loading**: Optimized for performance
-- **SEO Ready**: Built-in search engine optimization
-- **Secure**: Modern security best practices
-
-## 🛠️ Development
-
-### Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
-- `npm run lint:fix` - Fix ESLint issues
-- `npm run format` - Format code with Prettier
-- `npm run setup` - Run setup script for new installations
-- `npm run convert-yaml` - Convert YAML to JSON
-- `npm run dev:yaml` - Convert YAML and start dev server
-
-### Project Structure
+## Project Structure
 
 ```
 content/
-├── government/         # Government section markdown & YAML
-│   └── departments/    # Department pages (executive, legislative, etc.)
-└── services/           # Services section markdown & YAML
+├── government/           # Government pages (departments, news, reports, …)
+│   └── departments/      # Department markdown & YAML
+└── services/             # Service pages (10 categories)
+    ├── health-services/
+    ├── education/
+    ├── business/
+    └── …
+
+public/
+└── locales/              # i18next translation files (en, …)
 
 src/
-├── components/         # Reusable UI components
-│   ├── home/           # Home page components
-│   ├── layout/         # Layout components (Navbar, Footer)
-│   └── ui/             # Basic UI components
-├── data/               # YAML configuration (services.yaml, government.yaml)
-├── i18n/               # Internationalization
-├── lib/                # Utility functions (markdownLoader, yamlLoader)
-├── pages/              # Page components (Home, Services, Government, Document)
-└── types/              # TypeScript type definitions
+├── components/           # Reusable UI components
+│   ├── home/             # Home page sections
+│   ├── layout/           # Navbar, Footer
+│   ├── sections/         # Shared sections
+│   └── ui/               # UI primitives
+├── data/                 # Top-level YAML configs + loaders
+├── hooks/                # Custom React hooks
+├── i18n/                 # i18next setup
+├── lib/                  # Utilities (markdownLoader, yamlLoader, meilisearch)
+├── pages/                # Route components (Home, Services, Government, Document, Search)
+└── types/                # TypeScript types
 ```
 
-## 👥 Contributors
+## Routes
 
-- **[iyanski](https://github.com/iyanski)** — Project creator and maintainer
-- **[Nicu Listana](https://github.com/niculistana)** — Contributor
+| Path                                  | Page                 |
+| ------------------------------------- | -------------------- |
+| `/`                                   | Home                 |
+| `/services`                           | Services index       |
+| `/services/:category`                 | Category listing     |
+| `/services/:category/:documentSlug`   | Service document     |
+| `/government`                         | Government index     |
+| `/government/:category`               | Category listing     |
+| `/government/:category/:documentSlug` | Government document  |
+| `/search`                             | Search (Meilisearch) |
+| `/:documentSlug`                      | Document (catch-all) |
 
-## 🤝 Contributing
+## Content System
 
-We welcome contributions from everyone! Whether you're a developer, government official, or community member, there are many ways to help improve this project.
+Content lives in `content/` as YAML indexes and Markdown pages:
 
-### 🌟 For Non-Technical Contributors
+1. `src/data/services.yaml` — service categories (name, slug, icon, description)
+2. `content/services/{slug}/index.yaml` — pages per category
+3. `content/services/{slug}/{page}.md` — Markdown content
 
-**No coding experience required!** You can contribute valuable content and improvements using GitHub's web interface.
+The same pattern applies to `content/government/`. See [CONTENT-GUIDE.md](CONTENT-GUIDE.md) for the full authoring guide, and [CONTENT-MANAGEMENT.md](CONTENT-MANAGEMENT.md) for non-technical editing.
 
-#### Quick Start for Non-Technical Users
+Markdown pages support `{PLACEHOLDER}` tokens resolved from companion `.json` files or `VITE_*` env vars (e.g. `{MAYOR}` in `executive.md`).
 
-1. **Create a GitHub account** (free at github.com)
-2. **Navigate to the repository** in your web browser
-3. **Use our detailed guide**: [CONTENT-MANAGEMENT.md](CONTENT-MANAGEMENT.md) - Complete step-by-step instructions for editing content without any technical knowledge
+## Contributing
 
-#### What You Can Contribute
+Contributions are welcome — from Rizal developers, civic volunteers, and residents.
 
-- **📝 Content Updates**: Fix outdated information, add new services, improve descriptions
-- **🌐 Translations**: Help translate content to Filipino, Cebuano, or other local languages
-- **📋 Service Information**: Add details about government services, requirements, and processes
-- **🔍 Content Review**: Check for accuracy, clarity, and completeness
-- **💡 Suggestions**: Propose new features or improvements
+- **Find a task:** the [BETTER RIZALNE PROGRESS board](https://github.com/users/njveneracion/projects/3) is the ranked backlog. Pick an open issue in the highest `Priority` band (P1 = launch blocker, P2 = enhancement).
+- **Read the guide:** [CONTRIBUTING.md](CONTRIBUTING.md) covers setup, standards, and the definition of done.
+- **Non-technical?** You can edit content directly on GitHub — see [CONTENT-MANAGEMENT.md](CONTENT-MANAGEMENT.md).
 
-#### How to Contribute (No Git Required)
+See [ROADMAP.md](ROADMAP.md) for the definition of done and planned future features.
 
-1. **Find content to edit**:
-   - Go to `content/services/` for service pages or `content/government/` for department pages
-   - Choose a category (health, education, business, departments, etc.)
-   - Click on any `.md` file to edit
+## Documentation
 
-2. **Make your changes**:
-   - Click the pencil icon (✏️) to edit
-   - Update the content using simple text formatting
-   - Add new information, fix errors, or improve clarity
+| File                                           | Description                          |
+| ---------------------------------------------- | ------------------------------------ |
+| [ROADMAP.md](ROADMAP.md)                       | Definition of done + future features |
+| [CONTRIBUTING.md](CONTRIBUTING.md)             | Contribution guidelines              |
+| [CONTENT-GUIDE.md](CONTENT-GUIDE.md)           | Content writing guidelines           |
+| [CONTENT-MANAGEMENT.md](CONTENT-MANAGEMENT.md) | Non-technical content editing guide  |
+| [DEPLOYMENT-GUIDE.md](DEPLOYMENT-GUIDE.md)     | Deploy to Vercel & other platforms   |
+| [docs/meilisearch.md](docs/meilisearch.md)     | Meilisearch setup                    |
+| [CHANGELOG.md](CHANGELOG.md)                   | Version history                      |
 
-3. **Save your changes**:
-   - Write a brief description of what you changed
-   - Click "Commit changes"
-   - Your changes will be reviewed and merged
+## License
 
-#### Content Types You Can Edit
+[CC0 1.0 Universal](LICENSE) — public domain. Use, modify, and distribute freely, no attribution required.
 
-- **Service Descriptions**: How to apply for permits, scholarships, health services
-- **Requirements**: Documents needed, eligibility criteria, deadlines
-- **Contact Information**: Office locations, phone numbers, hours
-- **Process Steps**: Step-by-step instructions for government services
-- **Translations**: Help make content available in local languages
+This project is a fork of [iyanski/betterlocalgov](https://github.com/iyanski/betterlocalgov), a starter kit for Philippine LGUs.
 
-### 👨‍💻 For Technical Contributors
+## Acknowledgments
 
-#### Content Contributors (Basic Technical)
-
-1. **Fork the repository** on GitHub (click "Fork" at https://github.com/iyanski/betterlocalgov)
-2. **Clone your fork**: `git clone https://github.com/YOUR-USERNAME/betterlocalgov.git`
-3. **Add upstream remote**: `git remote add upstream https://github.com/iyanski/betterlocalgov.git`
-4. **Create a content branch**: `git checkout -b content/update-health-services`
-5. **Edit content files** in `content/`
-6. **Test your changes**: `npm run dev`
-7. **Submit a pull request** to the original repository
-
-#### Developers
-
-1. **Fork the repository** on GitHub (click "Fork" at https://github.com/iyanski/betterlocalgov)
-2. **Clone your fork**: `git clone https://github.com/YOUR-USERNAME/betterlocalgov.git`
-3. **Add upstream remote**: `git remote add upstream https://github.com/iyanski/betterlocalgov.git`
-4. **Create a feature branch**: `git checkout -b feature/new-component`
-5. **Make your changes**
-6. **Run tests**: `npm run lint && npm run build`
-7. **Submit a pull request** to the original repository
-
-#### Keeping Your Fork Updated
-
-To get the latest changes from the original repository:
-
-```bash
-# Fetch the latest changes from upstream
-git fetch upstream
-
-# Switch to your main branch
-git checkout main
-
-# Merge upstream changes into your main branch
-git merge upstream/main
-
-# Push updates to your fork on GitHub
-git push origin main
-```
-
-**Best Practice**: Always sync your fork before creating a new branch for contributions.
-
-### 📋 Contribution Guidelines
-
-#### Content Guidelines
-
-- **Accuracy First**: Ensure all information is current and correct
-- **Clear Language**: Write for the general public, avoid jargon
-- **Complete Information**: Include all necessary details (requirements, steps, contacts)
-- **Local Context**: Consider the specific needs of your community
-- **Accessibility**: Use clear headings, simple language, and logical structure
-
-#### Technical Guidelines
-
-- Follow existing code style and patterns
-- Test your changes thoroughly
-- Update documentation when needed
-- Ensure mobile responsiveness
-- Maintain accessibility standards
-
-### 🎯 Priority Areas for Contribution
-
-1. **Content Accuracy**: Update outdated information, fix errors
-2. **Localization**: Translate content to Filipino, Cebuano, and other Philippine languages
-3. **Service Coverage**: Add missing government services and programs
-4. **User Experience**: Improve clarity and ease of use
-5. **Accessibility**: Ensure content is accessible to all citizens
-
-### 🆘 Need Help?
-
-- **For Content Questions**: Check [CONTENT-MANAGEMENT.md](CONTENT-MANAGEMENT.md)
-- **For Technical Issues**: Open an issue on GitHub
-- **For General Questions**: Contact the project maintainers
-
-### 🏆 Recognition
-
-All contributors are recognized in our project documentation. Your contributions help make government services more accessible to all citizens!
-
-## 📄 License
-
-This project is licensed under the Creative Commons Zero (CC0) License - see the [LICENSE](LICENSE) file for details.
-
-**CC0 License Benefits:**
-
-- **Public Domain**: No restrictions on use, modification, or distribution
-- **Government Friendly**: Perfect for public sector projects
-- **Maximum Reusability**: Anyone can use, modify, and distribute freely
-- **No Attribution Required**: Though attribution is appreciated
-
-## 🙏 Acknowledgments
-
-- Built with [React](https://reactjs.org/)
-- Styled with [Tailwind CSS v4](https://tailwindcss.com/)
+- Built with [React](https://reactjs.org/) · [Vite](https://vite.dev/) · [TypeScript](https://www.typescriptlang.org/) · [Tailwind CSS v4](https://tailwindcss.com/)
 - UI components by [@bettergov/kapwa](https://github.com/bettergov/kapwa)
-- Icons by [Lucide React](https://lucide.dev/)
-- Content management with [YAML](https://yaml.org/)
-- Internationalization with [i18next](https://www.i18next.com/)
+- Icons by [Lucide](https://lucide.dev/) · i18n by [i18next](https://www.i18next.com/) · Search by [Meilisearch](https://www.meilisearch.com/)
+- Community: [BetterGov.ph](https://github.com/jmacj/better-lgu-directory)
 
 ---
 
-**Made with ❤️ for Philippine Local Government Units**
+**Made with ❤️ for better local governance.**
