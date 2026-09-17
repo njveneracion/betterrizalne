@@ -1,18 +1,12 @@
 import React, { useState } from 'react';
-import {
-  X,
-  Menu,
-  ChevronDown,
-  Globe,
-  Search,
-  CheckCircle2,
-} from 'lucide-react';
+import { X, Menu, ChevronDown, Globe, Search } from 'lucide-react';
 import { mainNavigation } from '../../data/navigation';
 import type { LanguageType } from '../../types/index';
 import { Link } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import { LANGUAGES } from '../../i18n/languages';
 import { isMeilisearchEnabled } from '../../lib/meilisearch';
+import lguLogo from '../../assets/images/lgu-rizal-ne-logo.png';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -97,12 +91,11 @@ const Navbar: React.FC = () => {
         <div className="flex justify-between items-center py-4">
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
-              <CheckCircle2 className="h-12 w-12 mr-3" />
-              {/* <img
-                src="/ph-logo.webp"
-                alt="Philippines Coat of Arms"
-                className="h-12 w-12 mr-3"
-              /> */}
+              <img
+                src={lguLogo}
+                alt={`${import.meta.env.VITE_GOVERNMENT_NAME} official seal`}
+                className="h-12 w-12 mr-3 object-contain"
+              />
               <div>
                 <div className="text-black font-bold">
                   {import.meta.env.VITE_GOVERNMENT_NAME}
