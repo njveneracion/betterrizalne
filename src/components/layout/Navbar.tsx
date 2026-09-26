@@ -6,7 +6,7 @@ import { Link } from 'react-router';
 import { useTranslation } from 'react-i18next';
 import { LANGUAGES } from '../../i18n/languages';
 import { isMeilisearchEnabled } from '../../lib/meilisearch';
-import lguLogo from '../../assets/images/lgu-rizal-ne-logo.png';
+import lguLogo from '../../assets/images/lgu-rizal-ne-logo.svg';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -36,15 +36,15 @@ const Navbar: React.FC = () => {
   return (
     <nav className="bg-white shadow-sm sticky top-0 z-50">
       {/* Top bar with language switcher and additional links */}
-      <div className="border-b border-gray-200">
+      <div className="border-b border-gray-200 bg-kapwa-green-600">
         <div className="container mx-auto px-4 flex justify-end items-center h-10">
           <div className="flex items-center space-x-4">
             <a
               href="https://bettergov.ph/join-us"
-              className="text-xs text-primary-600 hover:text-primary-700 font-semibold transition-colors"
+              className="text-xs text-warning-500 hover:text-warning-600 font-semibold transition-colors"
               target="_blank"
             >
-              🚀 Join Us
+              Join Us
             </a>
             <a
               href="https://bettergov.ph/about"
@@ -94,7 +94,7 @@ const Navbar: React.FC = () => {
               <img
                 src={lguLogo}
                 alt={`${import.meta.env.VITE_GOVERNMENT_NAME} official seal`}
-                className="h-12 w-12 mr-3 object-contain"
+                className="h-16 w-16 mr-3 object-contain"
               />
               <div>
                 <div className="text-black font-bold">
